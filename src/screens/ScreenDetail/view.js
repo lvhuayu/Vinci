@@ -2,16 +2,15 @@
  * ScreenHome/index.js
  */
 
-import React from "react";
-import {Text, View, Button} from "react-native";
+// 引入依赖略
 
 export default self => (
     <View>
         <Text style={{ fontSize: 36 }}>home</Text>
         <Button
-            title="go to detail page..."
+            title="goSomePage1"
             // 路由跳转
-            onPress={() => self.navigation.navigate("ScreenDetail")}
+            onPress={() => self.navigation.navigate("ScreenSome1")}
         />
     </View>
 );

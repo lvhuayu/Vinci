@@ -1,6 +1,7 @@
 /**
  * ScreenHome/index.js
  */
+
 import React, {Component} from 'react';
 import view from "../ScreenHome/view";
 
