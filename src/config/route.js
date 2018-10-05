@@ -10,11 +10,19 @@ import { createStackNavigator } from "react-navigation";
 import ScreenBottomTab from '../screens/ScreenBottomTab';
 import ScreenHome from "../screens/ScreenHome";
 import ScreenDetail from "../screens/ScreenDetail";
+import ScreenLogin from "../screens/ScreenLogin";
+import ScreenReg from "../screens/ScreenReg";
 
 // 配置路由
 const AppNavigator = createStackNavigator({
+    ScreenLogin: {
+        screen: ScreenLogin  // 登录页
+    },
+    ScreenReg: {
+        screen: ScreenReg  // 注册页
+    },
     ScreenBottomTab: {
-        screen: ScreenBottomTab,
+        screen: ScreenBottomTab
     },
     ScreenHome: {
         screen: ScreenHome
