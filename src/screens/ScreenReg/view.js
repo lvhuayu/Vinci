@@ -5,7 +5,7 @@
 import React from "react";
 import {View, TextInput, StyleSheet, Text, TouchableOpacity, KeyboardAvoidingView} from "react-native";
 
-export default () => (
+export default self => (
     <View>
         <KeyboardAvoidingView style={styles.container} behavior="padding">
             <View style={styles.input_box}>
@@ -50,7 +50,7 @@ export default () => (
             </View>
             <View>
                 <TouchableOpacity style={styles.loginButton}
-                                  onPress={()=> console.log('press me')}>
+                                  onPress={() => self.navigation.navigate("ScreenHome")}>
                     <Text style={styles.text}>确定</Text>
                 </TouchableOpacity>
             </View>
