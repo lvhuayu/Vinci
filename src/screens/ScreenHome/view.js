@@ -6,15 +6,57 @@ import React from "react";
 import {Text, View, Image, Button, ScrollView, StyleSheet} from "react-native";
 
 export default self => (
-    <ScrollView style={{ backgroundColor: '#FFFFFF'}}>
+    <ScrollView>
         <View style={styles.container}>
-            <Text style={{fontSize: 16}}>邀约去吃洞庭春</Text>
-            <Text style={{fontSize: 16}}>活动时间</Text>
-            <Text style={{fontSize: 16}}>活动地点</Text>
-            <Image style={{width:70, height:70}} source={require('../../assets/images/dongtingchun.png')}/>
+            <View style={styles.leftBox}>
+                <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+            </View>
+            <View style={styles.rightBox}>
+                <View style={styles.heading}>
+                    <Text style={styles.text}>邀约去吃洞庭春</Text>
+                </View>
+                <Image style={styles.image} source={require('../../assets/images/dongtingchun.png')}/>
+                <View style={styles.details}>
+                    <Text style={styles.text}>时间: 10/09/2018</Text>
+                    <Text style={styles.text}>地点: 洞庭春</Text>
+                    <Text style={styles.text}>对象: 仅限女生</Text>
+                    <Text style={styles.text}>费用: 我买单</Text>
+                </View>
+            </View>
         </View>
         <View style={styles.container}>
-            <Text style={{fontSize: 16}}>Home Page</Text>
+            <View style={styles.leftBox}>
+                <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+            </View>
+            <View style={styles.rightBox}>
+                <View style={styles.heading}>
+                    <Text style={styles.text}>邀约去吃洞庭春</Text>
+                </View>
+                <Image style={styles.image} source={require('../../assets/images/dongtingchun.png')}/>
+                <View style={styles.details}>
+                    <Text style={styles.text}>时间: 10/09/2018</Text>
+                    <Text style={styles.text}>地点: 洞庭春</Text>
+                    <Text style={styles.text}>对象: 仅限女生</Text>
+                    <Text style={styles.text}>费用: 我买单</Text>
+                </View>
+            </View>
+        </View>
+        <View style={styles.container}>
+            <View style={styles.leftBox}>
+                <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+            </View>
+            <View style={styles.rightBox}>
+                <View style={styles.heading}>
+                    <Text style={styles.text}>邀约去吃洞庭春</Text>
+                </View>
+                <Image style={styles.image} source={require('../../assets/images/dongtingchun.png')}/>
+                <View style={styles.details}>
+                    <Text style={styles.text}>时间: 10/09/2018</Text>
+                    <Text style={styles.text}>地点: 洞庭春</Text>
+                    <Text style={styles.text}>对象: 仅限女生</Text>
+                    <Text style={styles.text}>费用: 我买单</Text>
+                </View>
+            </View>
         </View>
         <Button
             title="Go to the detail page..."
@@ -30,29 +72,27 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     container:{
-        marginTop:10,
-        width:'100%',
-        height:150,
-        justifyContent: 'center',
+        marginTop:8,
+        marginLeft:3,
+        marginRight:3,
+        height:300,
         backgroundColor:'#FFFFFF',
-        borderWidth: 1,
-        borderColor: '#d6d7da',
-        paddingVertical: 20
+        borderRadius: 2,
     },
     heading:{
-
+        fontSize: 16
     },
-    input_box:{
-        marginLeft:10,
-        width:'100%',
-        height:70,
-        backgroundColor:'#FFFFFF',
+    details:{
+        fontSize: 16
     },
-    input:{
+    rightBox:{
         position: 'absolute',
-        marginLeft:50,
+        marginLeft:60,
         width:'70%',
-        height:35,
+    },
+    leftBox:{
+        position: 'absolute',
+        width:'30%',
     },
     label:{
         marginTop:11,
@@ -72,14 +112,19 @@ const styles = StyleSheet.create({
         marginLeft:16,
     },
     text:{
-        fontWeight:'bold',
-        fontSize:14,
-        color:'#FFF'
+        marginTop:12,
+        fontSize:14
     },
-    logo:{
-        width:160,
-        height:160,
-        marginTop:100
+    image:{
+        marginTop:12,
+        width:135,
+        height:135
+    },
+    photo:{
+        marginTop:12,
+        marginLeft:3,
+        width:50,
+        borderRadius:25,
+        height:50,
     }
-
 });
