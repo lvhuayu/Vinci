@@ -4,12 +4,19 @@
 
 import React from "react";
 import {Text, View, Image, Button, ScrollView, StyleSheet} from "react-native";
+import ImageViewer from 'react-native-image-zoom-viewer';
 
 export default self => (
     <ScrollView>
         <View style={styles.container}>
             <View style={styles.leftBox}>
-                <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+                <ImageViewer style={styles.photo} imageUrls={[
+                    {
+                        props: {
+                            source: require('../../assets/images/photo.png')
+                        }
+                    }
+                ]}/>
             </View>
             <View style={styles.rightBox}>
                 <View style={styles.heading}>
