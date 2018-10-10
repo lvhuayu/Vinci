@@ -3,7 +3,7 @@
  */
 
 import React from "react";
-import {View, TextInput, StyleSheet, Text, TouchableOpacity, KeyboardAvoidingView} from "react-native";
+import {View, TextInput, StyleSheet, Text, TouchableOpacity, KeyboardAvoidingView, PixelRatio} from "react-native";
 
 export default self => (
     <View>
@@ -16,12 +16,7 @@ export default self => (
                         maxLength = {10}
                         placeholder='输入手机号'/>
                 </View>
-                <View
-                    style={{
-                        borderBottomColor: 'grey',
-                        borderBottomWidth: 0.5,
-                    }}
-                />
+                <View style={{height: 1/PixelRatio.get(), backgroundColor:'#c4c4c4'}}/>
                 <View style={styles.row}>
                     <Text style={styles.label}>密码</Text>
                     <TextInput
@@ -44,54 +39,44 @@ export default self => (
 );
 
 const styles = StyleSheet.create({
-    row: {
-        flex: 0.5,
-        flexDirection: "row"
-    },
     container:{
-        marginTop:10,
+        marginTop:14,
         width:'100%',
-        height:70,
+        height:82,
         backgroundColor:'#FFFFFF'
     },
     input_box:{
-        marginLeft:10,
+        marginLeft:15,
         width:'100%',
-        height:70,
-        backgroundColor:'#FFFFFF',
+        height:82,
+    },
+    row: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems:'center',
     },
     input:{
         position: 'absolute',
-        marginLeft:50,
+        marginLeft:60,
         width:'70%',
-        height:35,
+        fontSize:15
     },
     label:{
-        marginTop:11,
-        fontSize:13,
-        height:35,
-        alignItems:'center',
-        justifyContent:'center',
+        fontSize:15
     },
-
     loginButton:{
         width:'90%',
         alignItems:'center',
         justifyContent:'center',
         backgroundColor:'#3333FF',
-        height:35,
-        marginTop:15,
-        marginLeft:16,
+        height:43,
+        marginTop:18,
+        marginLeft:'5%',
+        borderRadius: 3
     },
     text:{
         fontWeight:'bold',
-        fontSize:14,
-        color:'#FFF'
-    },
-    logo:{
-        width:160,
-        height:160,
-        marginTop:100
+        fontSize:15,
+        color:'#FFFFFF'
     }
-
 });
