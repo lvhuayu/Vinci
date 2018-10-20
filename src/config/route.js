@@ -15,14 +15,14 @@ import ScreenReg from "../screens/ScreenReg";
 
 // 配置路由
 const AppNavigator = createStackNavigator({
+    // ScreenBottomTab: {
+    //     screen: ScreenBottomTab
+    // },
     ScreenLogin: {
          screen: ScreenLogin  // 登录页
     },
     ScreenReg: {
          screen: ScreenReg  // 注册页
-    },
-    ScreenBottomTab: {
-        screen: ScreenBottomTab
     },
     ScreenHome: {
         screen: ScreenHome

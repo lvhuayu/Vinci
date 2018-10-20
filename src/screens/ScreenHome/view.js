@@ -3,96 +3,273 @@
  */
 
 import React from "react";
-import {Text, View, Image, Button, ScrollView, StyleSheet} from "react-native";
+import {Text, View, Image, ScrollView, StyleSheet, PixelRatio, TouchableOpacity} from "react-native";
 
 export default self => (
     <ScrollView>
-        <View style={styles.container}>
-            <View style={styles.leftBox}>
-                <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
-            </View>
-            <View style={styles.rightBox}>
-                <View style={styles.heading}>
-                    <Text style={styles.text}>邀约去吃洞庭春</Text>
-                </View>
-                <Image style={styles.image} source={require('../../assets/images/dongtingchun.png')}/>
-                <View style={styles.details}>
-                    <Text style={styles.text}>时间: 10/09/2018</Text>
-                    <Text style={styles.text}>地点: 洞庭春</Text>
-                    <Text style={styles.text}>对象: 仅限女生</Text>
-                    <Text style={styles.text}>费用: 我买单</Text>
-                </View>
-            </View>
-        </View>
-        <View style={styles.container}>
-            <View style={styles.leftBox}>
-                <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
-            </View>
-            <View style={styles.rightBox}>
-                <View style={styles.heading}>
-                    <Text style={styles.text}>邀约去吃洞庭春</Text>
-                </View>
-                <Image style={styles.image} source={require('../../assets/images/dongtingchun.png')}/>
-                <View style={styles.details}>
-                    <Text style={styles.text}>时间: 10/09/2018</Text>
-                    <Text style={styles.text}>地点: 洞庭春</Text>
-                    <Text style={styles.text}>对象: 仅限女生</Text>
-                    <Text style={styles.text}>费用: 我买单</Text>
-                </View>
-            </View>
-        </View>
-        <View style={styles.container}>
-            <View style={styles.leftBox}>
-                <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
-            </View>
-            <View style={styles.rightBox}>
-                <View style={styles.heading}>
-                    <Text style={styles.text}>邀约去吃洞庭春</Text>
-                </View>
-                <Image style={styles.image} source={require('../../assets/images/dongtingchun.png')}/>
-                <View style={styles.details}>
-                    <Text style={styles.text}>时间: 10/09/2018</Text>
-                    <Text style={styles.text}>地点: 洞庭春</Text>
-                    <Text style={styles.text}>对象: 仅限女生</Text>
-                    <Text style={styles.text}>费用: 我买单</Text>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+            <View style={styles.container}>
+                <View style={styles.innerBox}>
+                    <View style={styles.profile}>
+                        <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+                        <View style={styles.resume}>
+                            <View>
+                                <Text style={styles.name}> 人生若只如初见 </Text>
+                            </View>
+                            <View style={styles.age}>
+                                <Text> 38 </Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.activity}>
+                        <View>
+                            <Text style={styles.subject}> 有没有女生想于我一同去吃洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
+                            <Text style={styles.address}> 洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/clock.png')}/>
+                            <Text style={styles.time}> 2018-10-17 03:00  我请客</Text>
+                        </View>
+                    </View>
+                    <View style={{height: 1/PixelRatio.get(), marginTop:4, backgroundColor:'#c4c4c4'}}/>
+                    <View style={styles.status}>
+                        <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                    </View>
                 </View>
             </View>
-        </View>
-        <Button
-            title="Go to the detail page..."
-            // 路由跳转
-            onPress={() => self.navigation.navigate("ScreenDetail")}
-        />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+            <View style={styles.container}>
+                <View style={styles.innerBox}>
+                    <View style={styles.profile}>
+                        <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+                        <View style={styles.resume}>
+                            <View>
+                                <Text style={styles.name}> 人生若只如初见 </Text>
+                            </View>
+                            <View style={styles.age}>
+                                <Text> 38 </Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.activity}>
+                        <View>
+                            <Text style={styles.subject}> 有没有女生想于我一同去吃洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
+                            <Text style={styles.address}> 洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/clock.png')}/>
+                            <Text style={styles.time}> 2018-10-17 03:00  我请客</Text>
+                        </View>
+                    </View>
+                    <View style={{height: 1/PixelRatio.get(), marginTop:4, backgroundColor:'#c4c4c4'}}/>
+                    <View style={styles.status}>
+                        <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                    </View>
+                </View>
+            </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+            <View style={styles.container}>
+                <View style={styles.innerBox}>
+                    <View style={styles.profile}>
+                        <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+                        <View style={styles.resume}>
+                            <View>
+                                <Text style={styles.name}> 人生若只如初见 </Text>
+                            </View>
+                            <View style={styles.age}>
+                                <Text> 38 </Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.activity}>
+                        <View>
+                            <Text style={styles.subject}> 有没有女生想于我一同去吃洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
+                            <Text style={styles.address}> 洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/clock.png')}/>
+                            <Text style={styles.time}> 2018-10-17 03:00  我请客</Text>
+                        </View>
+                    </View>
+                    <View style={{height: 1/PixelRatio.get(), marginTop:4, backgroundColor:'#c4c4c4'}}/>
+                    <View style={styles.status}>
+                        <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                    </View>
+                </View>
+            </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+            <View style={styles.container}>
+                <View style={styles.innerBox}>
+                    <View style={styles.profile}>
+                        <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+                        <View style={styles.resume}>
+                            <View>
+                                <Text style={styles.name}> 人生若只如初见 </Text>
+                            </View>
+                            <View style={styles.age}>
+                                <Text> 38 </Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.activity}>
+                        <View>
+                            <Text style={styles.subject}> 有没有女生想于我一同去吃洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
+                            <Text style={styles.address}> 洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/clock.png')}/>
+                            <Text style={styles.time}> 2018-10-17 03:00  我请客</Text>
+                        </View>
+                    </View>
+                    <View style={{height: 1/PixelRatio.get(), marginTop:4, backgroundColor:'#c4c4c4'}}/>
+                    <View style={styles.status}>
+                        <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                    </View>
+                </View>
+            </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+            <View style={styles.container}>
+                <View style={styles.innerBox}>
+                    <View style={styles.profile}>
+                        <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+                        <View style={styles.resume}>
+                            <View>
+                                <Text style={styles.name}> 人生若只如初见 </Text>
+                            </View>
+                            <View style={styles.age}>
+                                <Text> 38 </Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.activity}>
+                        <View>
+                            <Text style={styles.subject}> 有没有女生想于我一同去吃洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
+                            <Text style={styles.address}> 洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/clock.png')}/>
+                            <Text style={styles.time}> 2018-10-17 03:00  我请客</Text>
+                        </View>
+                    </View>
+                    <View style={{height: 1/PixelRatio.get(), marginTop:4, backgroundColor:'#c4c4c4'}}/>
+                    <View style={styles.status}>
+                        <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                    </View>
+                </View>
+            </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+            <View style={styles.container}>
+                <View style={styles.innerBox}>
+                    <View style={styles.profile}>
+                        <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+                        <View style={styles.resume}>
+                            <View>
+                                <Text style={styles.name}> 人生若只如初见 </Text>
+                            </View>
+                            <View style={styles.age}>
+                                <Text> 38 </Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.activity}>
+                        <View>
+                            <Text style={styles.subject}> 有没有女生想于我一同去吃洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
+                            <Text style={styles.address}> 洞庭春 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/clock.png')}/>
+                            <Text style={styles.time}> 2018-10-17 03:00  我请客</Text>
+                        </View>
+                    </View>
+                    <View style={{height: 1/PixelRatio.get(), marginTop:4, backgroundColor:'#c4c4c4'}}/>
+                    <View style={styles.status}>
+                        <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                    </View>
+                </View>
+            </View>
+        </TouchableOpacity>
     </ScrollView>
 );
 
 const styles = StyleSheet.create({
     row: {
-        flex: 0.5,
+        marginTop:8,
         flexDirection: "row"
     },
     container:{
-        marginTop:8,
+        flexDirection: "column",
+        marginBottom:4,
         marginLeft:3,
         marginRight:3,
-        height:300,
+        height:210,
         backgroundColor:'#FFFFFF',
         borderRadius: 2,
     },
-    heading:{
-        fontSize: 16
+    innerBox:{
+        marginLeft:10,
+        marginRight:10
     },
-    details:{
-        fontSize: 16
+    profile:{
+        flexDirection: "row",
+        marginTop:18,
+        marginBottom:15,
     },
-    rightBox:{
-        position: 'absolute',
-        marginLeft:60,
-        width:'70%',
-    },
-    leftBox:{
-        position: 'absolute',
-        width:'30%',
+    activity:{
+        flexDirection: "column",
+        marginTop:12,
     },
     label:{
         marginTop:11,
@@ -115,16 +292,60 @@ const styles = StyleSheet.create({
         marginTop:12,
         fontSize:14
     },
+    subject:{
+        fontSize:17
+    },
+    address:{
+        fontSize:16
+    },
+    time:{
+        fontSize:15
+    },
     image:{
         marginTop:12,
         width:135,
         height:135
     },
     photo:{
-        marginTop:12,
-        marginLeft:3,
-        width:50,
-        borderRadius:25,
-        height:50,
-    }
+        justifyContent: 'center',
+        width:52,
+        borderRadius:26,
+        height:52,
+    },
+    small_picture:{
+        width:17,
+        height:17,
+        marginRight:3,
+    },
+    name:{
+        marginTop:6,
+        marginBottom:6,
+        fontSize:17
+    },
+    age:{
+        backgroundColor: '#87cefa',
+        width:35,
+        height:18,
+        fontSize:15,
+        marginLeft:6,
+        borderRadius:26,
+        alignItems:'center'
+    },
+    resume:{
+        flexDirection: "column",
+        marginLeft:15,
+    },
+    status:{
+        marginTop:8,
+        flexDirection: "row",
+    },
+    eye_picture:{
+        width:34,
+        height:34,
+        marginRight:3,
+    },
+    times:{
+        fontSize:15,
+        marginRight:3,
+    },
 });

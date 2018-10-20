@@ -15,6 +15,7 @@ export default class ScreenReg extends Component {
     constructor(props) {
         super();
         this.navigation = props.navigation;
+        this.state = { email: '', password: '', errorMessage: null }
     }
 
     render() {

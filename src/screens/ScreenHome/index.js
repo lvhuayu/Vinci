@@ -6,7 +6,7 @@ import view from "../ScreenHome/view";
 
 export default class ScreenHome extends Component {
 
-    static navigationOptions = {
+    navigationOptions = {
         title: '首页',
         tabBarIcon: ({ focused }) => {
             // 根据是否选中，显示不同图片

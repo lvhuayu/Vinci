@@ -4,17 +4,22 @@
 
 import React from "react";
 import {View, TextInput, StyleSheet, Text, TouchableOpacity, KeyboardAvoidingView, PixelRatio} from "react-native";
+import Fire from "../../../Fire";
 
 export default self => (
     <View>
         <KeyboardAvoidingView style={styles.container} behavior="padding">
             <View style={styles.input_box}>
                 <View style={styles.row}>
-                    <Text style={styles.label}>手机号</Text>
+                    <Text style={styles.label}>邮箱</Text>
                     <TextInput
                         style={styles.input}
-                        maxLength = {10}
-                        placeholder='输入手机号'/>
+                        autoCapitalize="none"
+                        maxLength = {30}
+                        placeholder='输入邮箱'
+                        onChangeText={email => self.setState({ email })}
+                        value={self.state.email}
+                    />
                 </View>
                 <View style={{height: 1/PixelRatio.get(), backgroundColor:'#c4c4c4'}}/>
                 <View style={styles.row}>
@@ -22,15 +27,23 @@ export default self => (
                     <TextInput
                         style={styles.input}
                         textContentType={'password'}
-                        maxLength = {15}
+                        autoCapitalize="none"
+                        maxLength = {30}
                         secureTextEntry={true}
                         placeholder='输入密码'
-                        password={true}/>
+                        password={true}
+                        onChangeText={password => self.setState({ password })}
+                        value={self.state.password}
+                    />
                 </View>
             </View>
             <View>
                 <TouchableOpacity style={styles.loginButton}
-                                  onPress={() => self.navigation.navigate("ScreenReg")}>
+                                  onPress={() => Fire.shared.handleSignIn({
+                                      navigation:self.navigation,
+                                      email: self.state.email,
+                                      password: self.state.password
+                                  })}>
                     <Text style={styles.text}>登录</Text>
                 </TouchableOpacity>
             </View>
@@ -57,7 +70,7 @@ const styles = StyleSheet.create({
     },
     input:{
         position: 'absolute',
-        marginLeft:60,
+        marginLeft:45,
         width:'70%',
         fontSize:15
     },
