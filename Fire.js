@@ -47,7 +47,7 @@ class Fire {
           .auth().signInWithEmailAndPassword(email, password)
           .then(() => {
             console.log("Sign in successfully...")
-            navigation.navigate("ScreenHome")
+            navigation.navigate("ScreenBottomTab")
           });
   };
 

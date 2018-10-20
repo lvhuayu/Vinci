@@ -15,9 +15,6 @@ import ScreenReg from "../screens/ScreenReg";
 
 // 配置路由
 const AppNavigator = createStackNavigator({
-    // ScreenBottomTab: {
-    //     screen: ScreenBottomTab
-    // },
     ScreenLogin: {
          screen: ScreenLogin  // 登录页
     },
@@ -29,7 +26,10 @@ const AppNavigator = createStackNavigator({
     },
     ScreenDetail: {
         screen: ScreenDetail
-    }
+    },
+    ScreenBottomTab: {
+        screen: ScreenBottomTab
+    },
 });
 
 export default () => <AppNavigator />;

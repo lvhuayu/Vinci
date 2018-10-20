@@ -7,7 +7,7 @@ import {Text, View, Image, ScrollView, StyleSheet, PixelRatio, TouchableOpacity}
 
 export default self => (
     <ScrollView>
-        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenDetail")}>
             <View style={styles.container}>
                 <View style={styles.innerBox}>
                     <View style={styles.profile}>
@@ -46,7 +46,7 @@ export default self => (
                 </View>
             </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenDetail")}>
             <View style={styles.container}>
                 <View style={styles.innerBox}>
                     <View style={styles.profile}>
@@ -85,7 +85,7 @@ export default self => (
                 </View>
             </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenDetail")}>
             <View style={styles.container}>
                 <View style={styles.innerBox}>
                     <View style={styles.profile}>
@@ -124,7 +124,7 @@ export default self => (
                 </View>
             </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenDetail")}>
             <View style={styles.container}>
                 <View style={styles.innerBox}>
                     <View style={styles.profile}>
@@ -163,7 +163,7 @@ export default self => (
                 </View>
             </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenDetail")}>
             <View style={styles.container}>
                 <View style={styles.innerBox}>
                     <View style={styles.profile}>
@@ -202,7 +202,7 @@ export default self => (
                 </View>
             </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenLogin")}>
+        <TouchableOpacity onPress={() => self.navigation.navigate("ScreenDetail")}>
             <View style={styles.container}>
                 <View style={styles.innerBox}>
                     <View style={styles.profile}>

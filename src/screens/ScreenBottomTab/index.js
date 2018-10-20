@@ -4,15 +4,15 @@
 
 // 引入依赖
 import React from 'react';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {createBottomTabNavigator} from "react-navigation";
 
 // 引入页面组件
 import ScreenHome from "../ScreenHome";
 import ScreenDetail from "../ScreenDetail";
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {createBottomTabNavigator} from "react-navigation";
 
 
-const ScreenTab = createBottomTabNavigator(
+const ScreenBottomTab = createBottomTabNavigator(
     // 配置 tab 路由
     {
         ScreenHomeTab: {
@@ -33,7 +33,7 @@ const ScreenTab = createBottomTabNavigator(
                 ),
             }
         },
-        Screen1Tab: {
+        ScreenMessageTab: {
             screen: ScreenHome,
             navigationOptions: {
                 tabBarLabel: '信息',
@@ -42,7 +42,7 @@ const ScreenTab = createBottomTabNavigator(
                 ),
             }
         },
-        Screen2Tab: {
+        ScreenProfileTab: {
             screen: ScreenDetail,
             navigationOptions: {
                 tabBarLabel: '我的',
@@ -71,4 +71,17 @@ const ScreenTab = createBottomTabNavigator(
     }
 );
 
-export default ScreenTab;
+ScreenBottomTab.navigationOptions = ({ navigation }) => {
+    let { routeName } = navigation.state.routes[navigation.state.index];
+    let headerTitle, headerLeft, headerBackTitle;
+    if (routeName === 'ScreenHomeTab') {
+        headerTitle = '主页';
+        headerLeft = null;
+        headerBackTitle = null;
+    }
+    return {
+        headerTitle, headerLeft, headerBackTitle
+    };
+};
+
+export default ScreenBottomTab;

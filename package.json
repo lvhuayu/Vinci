@@ -25,6 +25,7 @@
     "react-navigation": "^2.17.0",
     "react-router": "^4.3.1",
     "firebase": "5.2.0",
-    "uuid": "latest"
+    "uuid": "latest",
+    "react-native-vector-icons": "latest"
   }
 }

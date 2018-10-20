@@ -3,18 +3,16 @@
  */
 
 import React, {Component} from 'react';
-import view from "../ScreenHome/view";
+import homeIndex from "../ScreenHome/index";
 
 export default class ScreenHomeTab extends Component {
-    static navigationOptions = {
-        title: '网络请求',
-        tabBarIcon: ({ focused }) => {
-            const icon = focused
-                ? require('../../assets/images/tab_home_active.png')
-                : require('../../assets/images/tab_home.png');
-            return <Image source={icon} style={{ height: 22, width: 22 }} />;
-        },
-    };
+
+    // 配置页面导航header选项
+    static navigationOptions = ({navigation}) => ({
+        headerTitle: '首页',
+        headerLeft: null,
+        headerTitleStyle:{alignSelf:'center'}
+    });
 
     constructor(props) {
         super();
@@ -22,6 +20,6 @@ export default class ScreenHomeTab extends Component {
     }
 
     render() {
-        return view(this);
+        return homeIndex(this);
     }
 }
