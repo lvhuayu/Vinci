@@ -125,6 +125,18 @@ class Fire {
   get timestamp() {
     return Date.now();
   }
+
+  createActivity = async ({expectation,note,place,date,gender,fee}) => {
+     firebase
+         .database().ref('ActivityList/').push({expectation,note,place,date,gender,fee})
+         .then((data) => {
+          //success callback
+          console.log('data ' , data)})
+         .catch((error)=>{
+          //error callback
+          console.log('error ' , error)
+        });
+  };
 }
 
 Fire.shared = new Fire();
