@@ -51,14 +51,12 @@ export default class RadioButton extends Component {
 
         // 这个orientation只是RadioGroup用来告诉RadioButton使用marginLeft还是marginTop，单独使用RadioButton时不需要使用
         if (orientation === 'row') {
-            console.log(orientation);
             marginStyle = {
                 flexDirection: 'row',
                 alignItems: 'center',
                 marginTop: margin,
             }
         } else {
-            console.log(orientation);
             marginStyle = {
                 flexDirection: 'row',
                 alignItems: 'center',

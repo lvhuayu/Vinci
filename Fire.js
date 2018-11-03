@@ -133,9 +133,20 @@ class Fire {
           //success callback
           console.log('data ' , data)})
          .catch((error)=>{
-          //error callback
+          //error callbackSS
           console.log('error ' , error)
         });
+  };
+
+  readActivity() {
+    let ref = firebase.database().ref();
+    ref.on("value", function(snapshot) {
+        snapshot.val();
+        console.log(snapshot.val());
+    }, function (error) {
+        console.log("Error: " + error.code);
+    });
+    return "AAA";
   };
 }
 

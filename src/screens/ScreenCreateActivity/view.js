@@ -5,9 +5,9 @@
 import React from "react";
 import DatePicker from "react-native-datepicker";
 import RadioGroup from "../../components/RadioGroup";
+import MyTextInput from "../../components/MyTextInput";
 
-import {Text, View, StyleSheet, PixelRatio, KeyboardAvoidingView, TextInput} from "react-native";
-
+import {Text, View, StyleSheet, PixelRatio, KeyboardAvoidingView} from "react-native";
 
 export default self => (
     <KeyboardAvoidingView>
@@ -32,11 +32,11 @@ export default self => (
                 </View>
                 <View style={styles.divide_line}/>
                 <View style={styles.row}>
-                    <Text style={styles.label}> 期望 </Text>
-                    <TextInput
+                    <Text style={styles.label}> 活动 </Text>
+                    <MyTextInput
                         style={styles.input}
                         autoCapitalize="none"
-                        placeholder='希望TA是什么样子的呢？'
+                        placeholder='发起一个约会吧'
                         onChangeText={(value) => self.setState({expectation: value})}
                         value={self.state.expectation}
                     />
@@ -48,7 +48,7 @@ export default self => (
                 <View style={styles.activity_note}>
                     <View style={styles.row}>
                         <Text style={styles.label}> 说明 </Text>
-                        <TextInput
+                        <MyTextInput
                             style={styles.input}
                             autoCapitalize="none"
                             placeholder='打动对方和你约会'
@@ -64,7 +64,7 @@ export default self => (
                 <View style={styles.activity_details}>
                     <View style={styles.row}>
                         <Text style={styles.label}> 场景 </Text>
-                        <TextInput
+                        <MyTextInput
                             style={styles.input}
                             autoCapitalize="none"
                             placeholder='饭店 / 咖啡馆 / 电影院'
@@ -89,7 +89,7 @@ export default self => (
                                     fontSize:16
                                 },
                             }}
-                            onDateChange={(date) => {self.setState({date: date.toDateString()})}}
+                            onDateChange={(date) => {self.setState({date: date.toString()})}}
                         />
                     </View>
                     <View style={styles.divide_line}/>

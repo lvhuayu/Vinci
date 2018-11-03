@@ -21,6 +21,12 @@ export default class ScreenCreateActivity extends Component {
         };
     };
 
+    constructor(props) {
+        super();
+        this.navigation = props.navigation;
+        this.state = {};
+    }
+
     componentDidMount() {
         this.props.navigation.setParams({ createActivity: this._createActivity });
     }
@@ -37,15 +43,6 @@ export default class ScreenCreateActivity extends Component {
             console.log("Create new activity successfully!")
         });
     };
-
-    constructor(props) {
-        super();
-        this.navigation = props.navigation;
-
-        this.state = {
-            date: new Date(),
-        };
-    }
 
     render() {
         return view(this);

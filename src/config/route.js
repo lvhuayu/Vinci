@@ -22,9 +22,9 @@ const AppNavigator = createStackNavigator({
     // ScreenReg: {
     //      screen: ScreenReg  // 注册页
     // },
-    // ScreenHome: {
-    //     screen: ScreenHome
-    // },
+    ScreenHome: {
+        screen: ScreenHome
+    },
     ScreenCreateActivity: {
         screen: ScreenCreateActivity  // 创建页
     },
