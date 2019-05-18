@@ -138,6 +138,18 @@ class Fire {
         });
   };
 
+  applyActivity = async () => {
+      firebase
+          .database().ref('ActivityList/').push({expectation,note,place,date,gender,fee})
+          .then((data) => {
+              //success callback
+              console.log('data ' , data)})
+          .catch((error)=>{
+              //error callbackSS
+              console.log('error ' , error)
+          });
+  };
+
   readActivity() {
     let ref = firebase.database().ref();
     ref.on("value", function(snapshot) {

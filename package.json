@@ -33,6 +33,8 @@
     "react-native-flexi-radio-button": "^0.2.2",
     "react-native-icon-checkbox": "^1.2.0",
     "react-native-paper": "^2.1.3",
+    "react-native-picker": "^4.3.7",
+    "react-native-picker-select": "^5.0.1",
     "react-native-radio-group": "^1.0.3",
     "react-native-radio-input": "^0.9.4",
     "react-native-radio-master": "^1.0.1",

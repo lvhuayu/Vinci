@@ -4,6 +4,8 @@
 
 import React from "react";
 import {Text, View, Image, ScrollView, StyleSheet, PixelRatio, Modal, TouchableOpacity} from "react-native";
+import {Button} from "react-native-elements";
+import Fire from "../../../Fire";
 
 const images = [
     {url: "https://avatars2.githubusercontent.com/u/7970947?v=3&s=460"},
@@ -22,99 +24,112 @@ function openModal(index) {
     console.log(state.currentImageIndex);
 }
 
-export default () => (
-    <ScrollView>
-        <View style={styles.container}>
-            <View style={styles.innerBox}>
-                <View style={styles.profile}>
-                    <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
-                    <View style={styles.resume}>
+export default self => (
+    <View style={styles.bigcontainer}>
+        <ScrollView>
+            <View style={styles.container}>
+                <View style={styles.innerBox}>
+                    <View style={styles.profile}>
+                        <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
+                        <View style={styles.resume}>
+                            <View>
+                                <Text style={styles.name}> 人生若只如初见 </Text>
+                            </View>
+                            <View style={styles.age}>
+                                <Text> 38 </Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.activity}>
                         <View>
-                            <Text style={styles.name}> 人生若只如初见 </Text>
+                            <Text style={styles.subject}> 有没有女生想于我一同去吃洞庭春 </Text>
                         </View>
-                        <View style={styles.age}>
-                            <Text> 38 </Text>
+                        <View style={styles.divide_line}/>
+                        <ScrollView horizontal={true}>
+                            <View style={styles.wrapper}>
+                                <Image
+                                    resizeMode="cover"
+                                    style={styles.image}
+                                    source={{ uri: "https://avatars2.githubusercontent.com/u/7970947?v=3&s=460" }}
+                                />
+                                <Image
+                                    resizeMode="contain"
+                                    style={styles.image}
+                                    source={{ uri: "https://avatars2.githubusercontent.com/u/7970947?v=3&s=460" }}
+                                />
+                                <Image
+                                    resizeMode="cover"
+                                    style={styles.image}
+                                    source={{ uri: "https://avatars2.githubusercontent.com/u/7970947?v=3&s=460" }}
+                                />
+                            </View>
+                        </ScrollView>
+                        <View style={styles.divide_line}/>
+                        <View style={styles.detail_restaurant}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
+                            <Text style={styles.address}> 洞庭春 </Text>
+                        </View>
+                        <View style={styles.divide_line}/>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
+                            <Text style={styles.time}> 一位女生 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
+                            <Text style={styles.address}> 可接送 </Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Image style={styles.small_picture} source={require('../../assets/images/clock.png')}/>
+                            <Text style={styles.time}> 2018-10-17 03:00  我请客</Text>
                         </View>
                     </View>
-                </View>
-                <View style={styles.activity}>
-                    <View>
-                        <Text style={styles.subject}> 有没有女生想于我一同去吃洞庭春 </Text>
-                    </View>
                     <View style={styles.divide_line}/>
-                    <ScrollView horizontal={true}>
-                        <View style={styles.wrapper}>
-                            <Image
-                                resizeMode="cover"
-                                style={styles.image}
-                                source={{ uri: "https://avatars2.githubusercontent.com/u/7970947?v=3&s=460" }}
-                            />
-                            <Image
-                                resizeMode="contain"
-                                style={styles.image}
-                                source={{ uri: "https://avatars2.githubusercontent.com/u/7970947?v=3&s=460" }}
-                            />
-                            <Image
-                                resizeMode="cover"
-                                style={styles.image}
-                                source={{ uri: "https://avatars2.githubusercontent.com/u/7970947?v=3&s=460" }}
-                            />
-                        </View>
-                    </ScrollView>
-                    <View style={styles.divide_line}/>
-                    <View style={styles.detail_restaurant}>
-                        <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
-                        <Text style={styles.address}> 洞庭春 </Text>
-                    </View>
-                    <View style={styles.divide_line}/>
-                    <View style={styles.row}>
+                    <View style={styles.detail_status}>
+                        <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
+                        <Text style={styles.times}> 18 </Text>
+                        <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
+                        <Text style={styles.times}> 18 </Text>
                         <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
-                        <Text style={styles.time}> 一位女生 </Text>
+                        <Text style={styles.times}> 18 </Text>
                     </View>
-                    <View style={styles.row}>
-                        <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
-                        <Text style={styles.address}> 可接送 </Text>
-                    </View>
-                    <View style={styles.row}>
-                        <Image style={styles.small_picture} source={require('../../assets/images/clock.png')}/>
-                        <Text style={styles.time}> 2018-10-17 03:00  我请客</Text>
-                    </View>
-                </View>
-                <View style={styles.divide_line}/>
-                <View style={styles.detail_status}>
-                    <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
-                    <Text style={styles.times}> 18 </Text>
-                    <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
-                    <Text style={styles.times}> 18 </Text>
-                    <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
-                    <Text style={styles.times}> 18 </Text>
                 </View>
             </View>
-        </View>
-        <View style={styles.comment_container}>
-            <Text style={styles.comment}> 评论 2 </Text>
-            <View style={{height: 1/PixelRatio.get(), backgroundColor:'#c4c4c4'}}/>
-            <View style={styles.innerBox}>
-                <View style={styles.comment_profile}>
-                    <Image style={styles.comment_small_photo} source={require('../../assets/images/photo.png')}/>
-                    <View style={styles.comment_profile_detail}>
-                        <View>
-                            <Text style={styles.comment_name}> 人生若只如初见 </Text>
-                        </View>
-                        <View>
-                            <Text style={styles.subject}> 好吃吗？ </Text>
+            <View style={styles.comment_container}>
+                <Text style={styles.comment}> 评论 2 </Text>
+                <View style={{height: 1/PixelRatio.get(), backgroundColor:'#c4c4c4'}}/>
+                <View style={styles.innerBox}>
+                    <View style={styles.comment_profile}>
+                        <Image style={styles.comment_small_photo} source={require('../../assets/images/photo.png')}/>
+                        <View style={styles.comment_profile_detail}>
+                            <View>
+                                <Text style={styles.comment_name}> 人生若只如初见 </Text>
+                            </View>
+                            <View>
+                                <Text style={styles.subject}> 好吃吗？ </Text>
+                            </View>
                         </View>
                     </View>
                 </View>
             </View>
+        </ScrollView>
+        <View style={styles.apply_button}>
+            <Button
+                raised
+                rightIcon={{ type: 'octicon', buttonStyle: styles.someButtonStyle}}
+                backgroundColor='#FF5953'
+                title='报名'
+                onPress={() => {Fire.shared.applyActivity()}}/>
         </View>
-    </ScrollView>
+     </View>
 );
 
 const styles = StyleSheet.create({
     row: {
         marginTop:9,
         flexDirection: "row"
+    },
+    bigcontainer:{
+        height: '100%'
     },
     container:{
         flexDirection: "column",
@@ -288,4 +303,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#92BBD9',
     },
+    someButtonStyle: {
+        color: 'red'
+    },
+    apply_button: {
+        color: 'red',
+        position: 'fixed',
+        bottom: 60
+    }
 });

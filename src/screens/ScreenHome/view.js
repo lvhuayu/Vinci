@@ -42,11 +42,11 @@ export default self => (
                                 <View style={{height: 1/PixelRatio.get(), marginTop:4, backgroundColor:'#c4c4c4'}}/>
                                 <View style={styles.status}>
                                     <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
-                                    <Text style={styles.times}> 18 </Text>
+                                    <Text style={styles.times}> 0 </Text>
                                     <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
-                                    <Text style={styles.times}> 18 </Text>
+                                    <Text style={styles.times}> 0 </Text>
                                     <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
-                                    <Text style={styles.times}> 18 </Text>
+                                    <Text style={styles.times}> 0 </Text>
                                 </View>
                             </View>
                         </View>
