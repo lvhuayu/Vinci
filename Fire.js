@@ -51,7 +51,6 @@ class Fire {
           });
   };
 
-
   // Download Data
   getPaged = async ({ size, start }) => {
     let ref = Fire.collection.orderBy('timestamp', 'desc').limit(size);
