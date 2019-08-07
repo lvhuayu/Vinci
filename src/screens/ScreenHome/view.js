@@ -12,7 +12,7 @@ export default self => (
         <ScrollView>
             {Object.keys(self.state.activities).map((key) => {
                 return(
-                    <TouchableOpacity onPress={() => self.navigation.navigate("ScreenDetail")}>
+                    <TouchableOpacity onPress={() => {self.state.handleOnPress(key)}}>
                         <View style={styles.container}>
                             <View style={styles.innerBox}>
                                 <View style={styles.profile}>
@@ -42,7 +42,7 @@ export default self => (
                                 <View style={{height: 1/PixelRatio.get(), marginTop:4, backgroundColor:'#c4c4c4'}}/>
                                 <View style={styles.status}>
                                     <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
-                                    <Text style={styles.times}> 0 </Text>
+                                    <Text style={styles.times}> {self.state.activities[key]['viewCount']} </Text>
                                     <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
                                     <Text style={styles.times}> 0 </Text>
                                     <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>

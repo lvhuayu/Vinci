@@ -20,8 +20,6 @@ class Fire {
       storageBucket: "fanxiang-7aff3.appspot.com",
       messagingSenderId: "1092267004871"
     });
-    // Some nonsense...
-    firebase.firestore().settings({ timestampsInSnapshots: true });
 
     // Listen for auth
     firebase.auth().onAuthStateChanged(async user => {
@@ -85,7 +83,7 @@ class Fire {
     }
   };
 
-  // Upload Data
+  // Upload Photo
   uploadPhotoAsync = async uri => {
     const path = `${collectionName}/${this.uid}/${uuid.v4()}.jpg`;
     return uploadPhoto(uri, path);
@@ -112,19 +110,7 @@ class Fire {
     }
   };
 
-  // Helpers
-  static get collection() {
-    return firebase.firestore().collection(collectionName);
-  }
-
-  get uid() {
-    return (firebase.auth().currentUser || {}).uid;
-  }
-
-  get timestamp() {
-    return Date.now();
-  }
-
+  // Create new activity
   createActivity = async ({expectation,note,place,date,gender,fee}) => {
      firebase
          .database().ref('ActivityList/').push({expectation,note,place,date,gender,fee})
@@ -137,17 +123,40 @@ class Fire {
         });
   };
 
-  applyActivity = async () => {
-      firebase
-          .database().ref('ActivityList/').push({expectation,note,place,date,gender,fee})
-          .then((data) => {
+  // Update the existing activity
+  updateActivity = async ({expectation, note, place, date, gender, fee}) => {
+     firebase
+         .database().ref('ActivityList/').push({expectation, note, place, date, gender, fee})
+         .then((data) => {
               //success callback
               console.log('data ' , data)})
-          .catch((error)=>{
+         .catch((error)=>{
               //error callbackSS
               console.log('error ' , error)
-          });
+        });
   };
+
+  // Sign up the activity
+  applyActivity = async (activityKey) => {
+    const db = firebase.firestore();
+    const increment = firebase.firestore.FieldValue.increment(1);
+
+    const activitiesRef = db.collection('fangxiang').doc('activities');
+    activitiesRef.update({viewCount: increment})
+  };
+
+  // Helpers
+  static get collection() {
+    return firebase.firestore().collection(collectionName);
+  }
+
+  get uid() {
+    return (firebase.auth().currentUser || {}).uid;
+  }
+
+  get timestamp() {
+    return Date.now();
+  }
 
   readActivity() {
     let ref = firebase.database().ref();

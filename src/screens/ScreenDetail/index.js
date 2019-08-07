@@ -6,6 +6,8 @@ import React, {Component} from 'react';
 import view from "../ScreenDetail/view";
 import Fire from "../../../Fire";
 
+const firebase = require('firebase');
+
 export default class ScreenHome extends Component {
     // 自定义当前页面路由配置，后面介绍的TabNavigator也使用这个对象中的属性
     static navigationOptions = {
@@ -14,9 +16,25 @@ export default class ScreenHome extends Component {
     };
 
     constructor(props) {
-        super();
+        super(props);
         // 初始状态
         this.navigation = props.navigation;
+    }
+
+    componentWillMount() {
+        const activityKey = this.props.navigation.getParam('activityKey')
+        firebase.database().ref().child('ActivityList/'+ activityKey).on("value", snapshot => {
+            console.log(snapshot.val());
+            this.setState({ activityKey: activityKey});
+            this.setState({ activityData: snapshot.val()});
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+        var docRef = firebase.firestore().collection("fangxiang").doc("activities");
+        docRef.get().then(snapshot => {
+          console.log("Document data:", snapshot.data()['viewCount']);
+          this.setState({ activityMetaData: snapshot.data()['viewCount']});
+        });
     }
 
     componentDidMount() {
@@ -24,7 +42,6 @@ export default class ScreenHome extends Component {
     }
 
     _applyActivity = () => {
-        console.log("AAAAA");
         Fire.shared.applyActivity({
             expectation: this.state.expectation,
             note: this.state.note,

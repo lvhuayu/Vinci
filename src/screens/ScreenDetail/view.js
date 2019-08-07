@@ -33,16 +33,16 @@ export default self => (
                         <Image style={styles.photo} source={require('../../assets/images/photo.png')}/>
                         <View style={styles.resume}>
                             <View>
-                                <Text style={styles.name}> 人生若只如初见 </Text>
+                                <Text style={styles.name}> {self.state.activityData['owner']} </Text>
                             </View>
                             <View style={styles.age}>
-                                <Text> 38 </Text>
+                                <Text> {self.state.activityData['owner_age']} </Text>
                             </View>
                         </View>
                     </View>
                     <View style={styles.activity}>
                         <View>
-                            <Text style={styles.subject}> 有没有女生想于我一同去吃洞庭春 </Text>
+                            <Text style={styles.subject}> {self.state.activityData['expectation']} </Text>
                         </View>
                         <View style={styles.divide_line}/>
                         <ScrollView horizontal={true}>
@@ -67,26 +67,26 @@ export default self => (
                         <View style={styles.divide_line}/>
                         <View style={styles.detail_restaurant}>
                             <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
-                            <Text style={styles.address}> 洞庭春 </Text>
+                            <Text style={styles.address}> {self.state.activityData['place']} </Text>
                         </View>
                         <View style={styles.divide_line}/>
                         <View style={styles.row}>
                             <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
-                            <Text style={styles.time}> 一位女生 </Text>
+                            <Text style={styles.time}> 一位{self.state.activityData['gender']} </Text>
                         </View>
                         <View style={styles.row}>
                             <Image style={styles.small_picture} source={require('../../assets/images/fork.png')}/>
-                            <Text style={styles.address}> 可接送 </Text>
+                            <Text style={styles.address}> {self.state.activityData['note']} </Text>
                         </View>
                         <View style={styles.row}>
                             <Image style={styles.small_picture} source={require('../../assets/images/clock.png')}/>
-                            <Text style={styles.time}> 2018-10-17 03:00  我请客</Text>
+                            <Text style={styles.time}> {self.state.activityData['date']} {self.state.activityData['fee']}</Text>
                         </View>
                     </View>
                     <View style={styles.divide_line}/>
                     <View style={styles.detail_status}>
                         <Image style={styles.small_picture} source={require('../../assets/images/eye.png')}/>
-                        <Text style={styles.times}> 18 </Text>
+                        <Text style={styles.times}> {self.state.activityMetaData} </Text>
                         <Image style={styles.small_picture} source={require('../../assets/images/imessage.png')}/>
                         <Text style={styles.times}> 18 </Text>
                         <Image style={styles.small_picture} source={require('../../assets/images/person.png')}/>
@@ -118,7 +118,7 @@ export default self => (
                 rightIcon={{ type: 'octicon', buttonStyle: styles.someButtonStyle}}
                 backgroundColor='#FF5953'
                 title='报名'
-                onPress={() => {Fire.shared.applyActivity()}}/>
+                onPress={() => {Fire.shared.applyActivity(self.state.activityKey)}}/>
         </View>
      </View>
 );

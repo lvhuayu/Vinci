@@ -18,12 +18,12 @@ import ScreenUserDetailProfile from "../screens/ScreenUserDetailProfile";
 
 // 配置路由
 const AppNavigator = createStackNavigator({
-    ScreenLogin: {
-         screen: ScreenLogin  // 登录页
-    },
-    ScreenReg: {
-         screen: ScreenReg  // 注册页
-    },
+    // ScreenLogin: {
+    //      screen: ScreenLogin  // 登录页
+    // },
+    // ScreenReg: {
+    //      screen: ScreenReg  // 注册页
+    // },
     ScreenHome: {
         screen: ScreenHome  //主页
     },
